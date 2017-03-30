@@ -41,8 +41,12 @@ a{text-decoration: none;}
 	padding:15px 0px 15px 30px;
 }
 .header-menu{
+
 	padding:28px 0px;
 	text-align:center;
+	background: none;
+	border: none;
+	margin : 0px;
 }
 .header-menu li{
 	padding:0px 5px;
@@ -77,3 +81,127 @@ a{text-decoration: none;}
 	background: #1bbc9b;
 }
 /*Kết thúc CSS cho phần header-title */
+/*Bắt đầu CSS phần portfolio*/
+#portfolio{
+	background:#fff;
+	text-align: center;
+	padding: 50px 0px;
+}
+.portfolio-title{
+	padding-bottom: 30px;
+}
+.portfolio-title p{
+	font-size:16px;
+}
+.portfolio-list-btn{
+	margin:0 20%;
+	padding-bottom: 25px;
+}
+.portfolio-btn {
+	padding:5px 0px;
+}
+.portfolio-btn a {
+	color : #fff;
+}
+.portfolio-btn a:hover{
+	color:#000;
+}
+.portfolio-icon{
+	padding:15px 0px;
+}
+/*Kết thúc CSS phần portfolio*/
+
+/*Bắt đầu CSS phần about us*/
+#about-us{
+	background: #1bbc9b;
+	text-align:center;
+	padding:50px 10%;
+}
+.about-title{
+	padding-bottom: 45px;
+}
+.about-post{
+	padding: 10px 0px;
+}
+.about-text{
+	background: #fff;
+	width:220px;
+	margin:0 auto;
+	padding:10px 5px;
+}
+.about-text span{
+	font-size:18px;
+}
+.about-text p{
+	font-size: 14px;
+}
+/*Kết thúc CSS phần about us*/
+/*Bắt đầu CSS cho phần Contact us*/
+#contact{
+	background:#ecf0f1;
+	padding:50px 0px;
+}
+.contact-title{
+	text-align: center;
+	padding-bottom: 50px;
+}
+.form-left{
+	padding:0px 40px;
+}
+.form-left input{
+	width:40%;
+	float:left;
+	margin-bottom: 20px;
+}
+.form-email{
+	margin-left:20%;
+}
+.form-left textarea{
+	margin-bottom: 20px;
+}
+.form-left button{
+	float:right;
+}
+.form-right{
+	padding:0px;
+}
+.form-right p{
+	line-height: 28px;
+}
+/*Kết thúc CSS cho phần Contact us*/
+
+/*Bắt đầu CSS footer*/
+.footer{
+	background:#2d3e50;
+	padding:20px 0px;
+}
+.footer-left{
+	font-size:14px;
+	color:#fff;
+}
+.footer-left p{
+	line-height: 45px;
+}
+.footer-right a{
+	background: #1bbc9b;
+    color: #fff;
+    float: right;
+    padding: 15px;
+    text-decoration: none;
+}
+.footer-right a:hover{
+	color: #000;
+}
+/*Kết thúc CSS footer*/
+
+.collapse-li{
+	border: none;
+
+}
+
+@media screen and (max-width : 768px) {
+	.collapse-li li{padding:10px 0px;float:none;}
+	.header-menu{padding:0px 5px 0px 0px;}
+	.logo{padding-left:5px;}
+	.navbar-header button {margin:10px 0px;}
+}
