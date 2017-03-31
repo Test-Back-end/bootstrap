@@ -11,11 +11,38 @@
 	<script src="js/jquery-3.2.0.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">
+		$(document).ready(function(){
+	//Scroll page với các thẻ a.
+	$('#header a').click(function(){//tạo sự kiện cho các thẻ a nằm trong ID header
+        $('.current').removeClass("current");//loại bỏ tất cả class current
+        var posClick = $(this).attr('href');//lấy giá trị trong thuộc tính href,gắn vào posClick. posClick sẽ có dạng #xxxxx
+        var pos = $(posClick).position().top;//lấy khoảng cách từ id #xxxxx tới đầu trang gắn vào pos
+        $("[href='"+posClick+"']").addClass("current");//thêm class current vào thẻ có href bằng giá trị trong posClick
+        $('html, body').animate({
+            scrollTop:pos+20//lăn tới vị trí cách đầu trang 1 khoảng pos + 20 so với đầu trang
+        },1500);
+    });
+
+$(window).scroll(function(){
+	var posA = $(window).scrollTop();//lấy vị trí hiện tại tính từ đầu trang tới thanh cuộn
+	$('#wrapper').find('.wrap-inner').each(function(){//tìm các class wrap-inner trong id wrapper
+	var posB = $(this).position().top;//lấy ra vị trí theo chiều dọc của mỗi class wrap-inner
+	if(posB < posA){//khi cuộn tới vị trí B nhỏ hơn vị trí A
+		$('.current').removeClass("current");//xóa hết các class current
+		var pos = $(this).attr('id');//lấy id của vị trí hiện tại
+		$("[href='#"+pos+"']").addClass("current");//thẻ a nào có href giống với id hiện tại thì thêm vào class current
+		}
+	});
+});
+    
+});
+	</script>
 
 </head>
 <body>
-	<div class="container container-max">
-		<header>
+	<div id="wrapper" class="container container-max">
+		<header id="header" class="wrap-inner">
 			<div class="row header-top">
 				<div class="col-xs-4 col-sm-4 col-md-7 logo">
 					<h1><a href="#"><img src="img/logo.png"/></a></h1>
@@ -31,10 +58,10 @@
 				</div>
 					<div class="navbar-collapse collapse-li collapse" id="collapse">
 					    <ul class="nav navbar-nav navbar-right">
-	                        <li><a href="#">HOME</a></li>
-	                        <li><a href="#">PROFILO</a></li>
-	                        <li><a href="#">ABOUT</a></li>
-	                        <li><a href="#">CONTACT</a></li>
+	                        <li><a class="current" href="#header">HOME</a></li>
+	                        <li><a href="#portfolio">PROFILO</a></li>
+	                        <li><a href="#about-us">ABOUT</a></li>
+	                        <li><a href="#contact">CONTACT</a></li>
 	                    </ul>  
 	                </div>     
 				</nav><!--end header-menu-->
@@ -49,7 +76,7 @@
 			</div><!--end header-title-->
 		</header><!--end header-->
 		<section>
-			<div id = "portfolio">
+			<div id = "portfolio" class="wrap-inner">
 				<div class="row portfolio-title">
 					<h2 class="regular">Portfolio</h2>
 					<p class="regular">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
@@ -89,7 +116,7 @@
 					</div>
 				</div>
 			</div><!--end portfolio-->
-			<div id = "about-us">
+			<div id = "about-us" class="wrap-inner">
 				<div class="row about-title">
 					<h2 class="regular white">About us</h2>
 					<p class="regular white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
@@ -123,7 +150,7 @@
 			</div><!-- end about us -->
 		</section>
 		<footer>
-						<div id = "contact">
+						<div id = "contact" class="wrap-inner">
 							<div class="row contact-title">
 								<h2 class="regular">Contact us</h2>
 								<p class="regular">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
