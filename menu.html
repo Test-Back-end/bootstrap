@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Project Bootstrap</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/jquery-3.2.0.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		.my-navbar-header{
+			background: #ccc;/* Đổi màu nền thanh menu */
+		}
+		.my-navbar li{
+			padding: 0px 20px;
+		}
+		.my-navbar li a{
+			color:red; /* Đổi màu chữ thanh menu */
+			line-height: 50px;/* căn chữ vào giữa, do class .navbar của bootstrap quy định min-height = 50px nên tôi để line-height: 50px các bạn có thể vào file bootstrap.css xóa cái thuộc tính min-height này đi thì ko cần dùng line-height nữa. */
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Đây là menu mobile</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://congdongit.org">Cộng Đồng IT</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="./index.html">Home</a></li>
+                <li><a href="#">Themes</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Plugins<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Plugins 1</a></li>
+                        <li><a href="#">Plugins 2</a></li>
+                        <li><a href="#">Plugins 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Tools</a></li>
+                <li><a href="#">Donate</a></li>
+                <li><a href="#">Contact</a></li>              
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+		</header><!--end header-->
+	</div>
+</body>
+</html>
